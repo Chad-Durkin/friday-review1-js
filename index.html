@@ -2,8 +2,9 @@
 <html>
     <head>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <link rel="stylesheet" href="build/css/vendor.css">
-        <link rel="stylesheet" href="build/css/styles.css" type="text/css">
+        <link rel="stylesheet" href="scss/styles.scss">
         <script src="build/js/vendor.min.js"></script>
 <script type="text/javascript" src="build/js/app.js"></script>
         <title>Doctor Search Engine</title>
@@ -18,16 +19,14 @@
                             <form io="med-input">
                                 <i class="material-icons prefix">info_outline</i>
                                 <label for="icon_prefix">Whats your medical problem</label>
-                                <input id="icon_prefix" type="text" name="med-input">
-                                <button type="submit" name="button">Search!</button>
+                                <input id="med-input" type="text" name="med-input">
+                                <button id="search-button" type="submit" name="button">Search!</button>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-            <form class="" action="index.html" method="post">
-
-            </form>
+            <div id="results"><ul class="showDoctors"></ul></div>
         </div>
     </body>
 </html>
