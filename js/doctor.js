@@ -11,7 +11,8 @@ DocSearch.prototype.searchDoc = function (medIssue) {
         response.data.forEach(function(practice)
         {
             console.log(practice);
-            $(".showDoctors").append('<li> Location: ' + practice.practices.location_slug + ' Doctor: ' + practice.practices.name + ' Website: ' + practice.practices.website + ' Description: </li><br><p> ' + practice.practices.description + ' </p>');
+            console.log(practice.practices[0].visit_address.city);
+            $(".showDoctors").append('<li> <span class="headers">Address:</span> ' + practice.practices[0].visit_address.city + ', ' + practice.practices[0].visit_address.state + ' ' + practice.practices[0].visit_address.zip + ' ' + practice.practices[0].visit_address.street + ', <span class="headers">Doctor:</span> ' + practice.practices[0].name + ' <span class="headers">Website:</span> ' + practice.practices[0].website + '</li><p><span class="headers">Description:</span> ' + practice.practices[0].description + ' </p>');
         });
     }).fail(function(error) {
         $('.showDoctors').text(error.responseJSON.message);
