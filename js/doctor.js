@@ -12,7 +12,7 @@ DocSearch.prototype.searchDoc = function (medIssue) {
         {
             console.log(practice);
             console.log(practice.practices[0].visit_address.city);
-            $(".showDoctors").append('<li> <span class="headers">Address:</span> ' + practice.practices[0].visit_address.city + ', ' + practice.practices[0].visit_address.state + ' ' + practice.practices[0].visit_address.zip + ' ' + practice.practices[0].visit_address.street + ', <span class="headers">Doctor:</span> ' + practice.practices[0].name + ' <span class="headers">Website:</span> ' + practice.practices[0].website + '</li><p><span class="headers">Description:</span> ' + practice.practices[0].description + ' </p>');
+            $(".showDoctors").append('<div class="teal z-depth-5"><li> <span class="headers grey">Address:</span> ' + practice.practices[0].visit_address.city + ', ' + practice.practices[0].visit_address.state + ' ' + practice.practices[0].visit_address.zip + ' ' + practice.practices[0].visit_address.street + ', <span class="headers grey">Doctor:</span> ' + practice.practices[0].name + ' <span class="headers grey">Website:</span> ' + practice.practices[0].website + '</li><p><span class="headers grey">Description:</span> ' + practice.practices[0].description + ' </p></div>');
         });
     }).fail(function(error) {
         $('.showDoctors').text(error.responseJSON.message);
